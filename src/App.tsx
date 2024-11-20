@@ -1,5 +1,7 @@
 import { Button, ConfigProvider, Input, Space, theme, App,message } from 'antd';
 import { useEffect } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import  browserRouter from '@/router';
 
 const MyPage = () => {
   const { message } = App.useApp();
@@ -21,11 +23,11 @@ const MyApp = () => {
   return (
     <ConfigProvider
       theme={{
-        algorithm: theme.darkAlgorithm,
+        algorithm: theme.defaultAlgorithm,
       }}
     >
       <App>
-        <MyPage/>
+        <RouterProvider router={browserRouter}/> 
       </App>
     </ConfigProvider>
   );
